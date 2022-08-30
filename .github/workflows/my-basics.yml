@@ -40,7 +40,6 @@ jobs:
     - name: Pring Hello Message in Deploy
       run : echo "Hello World from Deploy job"
     
-    steps:
-    - name: Printing Deploy package
+    - name: Printig Deployment package
       run : echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
       
