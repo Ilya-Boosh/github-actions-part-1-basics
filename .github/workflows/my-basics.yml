@@ -5,31 +5,25 @@ env:
   APPLICATION_NAME   : "MyFlask"
   DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{ github.sha }}"
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   my_testing:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+   
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Print  Hello Message in Testing
-        run : echo "Hello World from Testing job"
+    - name: Print  Hello Message in Testing
+      run : echo "Hello World from Testing job"
         
-      - name: Execute few commands
-        run: |
-          echo: "Hello Message1"
-          echo: "Hello Message2"
-          echo: "Application name: ${{ env.APPLICATION_NAME }}"
+    - name: Execute few commands
+      run : |
+        echo: "Hello Message1"
+        echo: "Hello Message2"
+        echo: "Application name: ${{ env.APPLICATION_NAME }}"
           
 
   my_deploy:
